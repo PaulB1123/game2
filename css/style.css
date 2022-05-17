@@ -1,0 +1,1209 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu&display=swap');
+@import url('http://fonts.cdnfonts.com/css/roller-alika');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    width: 100%;
+    height: 43vw;
+    display: grid;
+    grid-template-areas: "game info";
+    grid-gap: 5vw;
+    grid-template-columns: 65% 1fr;
+    background-color: #4D89AE;
+}
+
+#screen {
+    top:3vw;
+    position: relative;
+    margin-left: 25px;
+    grid-area: game;
+    width: 64vw;
+    height: 36vw;
+    border: 4px #1D5E82 solid;
+    overflow: hidden;
+}
+
+
+#loading_box {
+    width:40.69921875vw;
+    height:40.69921875vw;
+    background-size: 100%;
+    background-image: url("../images/Position15.svg");
+    Z-index: 3 ;
+    position: absolute;
+    top: 4vw;
+    left:30vw;
+    animation: 6s spin ease-in;
+    cursor: pointer;
+}
+
+#background {
+    width: 120vw;
+    height: 57vw;
+    position: absolute;
+    top:0;
+    left:0;
+    Z-index: 2 ;
+    background-color: #4D89AE;
+
+}
+
+@keyframes spin {
+  7.142857142857143%{
+    background-image: url("../images/Position1.svg");
+  }
+  14.28571428571429%{
+    background-image: url("../images/Position2.svg");
+  }
+  21.42857142857143%{
+    background-image: url("../images/Position3.svg");
+  }
+  28.57142857142857%{
+    background-image: url("../images/Position4.svg");
+  }
+  35.71428571428571%{
+    background-image: url("../images/Position5.svg");
+  }
+  42.85714285714286%{
+    background-image: url("../images/Position6.svg");
+  }
+  50%{
+    background-image: url("../images/Position7.svg");
+  }
+  57.14285714285714%{
+    background-image: url("../images/Position8.svg");
+  }
+  64.28571428571429%{
+    background-image: url("../images/Position9.svg");
+  }
+  71.42857142857143%{
+    background-image: url("../images/Position10.svg");
+  }
+  78.57142857142857%{
+    background-image: url("../images/Position11.svg");
+  }
+  85.71428571428572%{
+    background-image: url("../images/Position12.svg");
+  }
+  92.85714285714286%{
+    background-image: url("../images/Position13.svg");
+  }
+  100%{
+    background-image: url("../images/Position14.svg");
+  }
+}
+
+
+#game {
+    width: 100%;
+    height: 100%;
+}
+
+#game_background {
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/Background_without_character_plus_UI.svg");
+    background-size: 100%;
+}
+
+#character_front {
+    width: 100%;
+    height: 100%;
+    background-size: 38%;
+    background-image: url("../images/Character_from_first_page.svg");
+    position: absolute;
+    top: 12vw;
+    left: 39.5vw;
+}
+
+#game_sprites {
+    width: 100%;
+    height: 100%;
+}
+
+
+#game_foreground {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+#score_board{
+    width:13.387843333333336vw;
+    height:3.1831600000000002vw;
+    background-image: url("../images/Points_bigger.svg");
+    background-size: 100%;
+    position: absolute;
+    top: 0.4vw;
+    left: 0.7vw;
+}
+
+#current_points{
+    font-family: 'Roller Alika';
+    font-size: 1.5rem; 
+    color: white;
+    position: absolute;
+    top: 0.8vw;
+    left: 7.9vw;
+}
+
+#time_board {
+    width: 3.590136666666666vw;
+    height: 14.817276666666666vw;
+    background-image: url("../images/Time_Out.svg");
+    background-size: 100%;
+    position: absolute;
+    top: 0.4vw;
+    left: 60vw;
+}
+
+#time_sprite {
+    width: 2.6vw;
+    height: 12.2vw;
+    border-radius:12px;
+    background-size: 100%;
+    background-color: #4D89AE;
+    position: absolute;
+    top: 1.5vw;
+    left: 0.51vw;
+    transform-origin: center bottom;
+}
+
+.time {
+    animation: time_block  30s  both  linear 1;
+}
+
+@keyframes time_block {
+
+    0% {
+        transform: scaleY(1);
+    }
+
+    100% {
+        transform: scaleY(0);
+    }
+
+}
+
+.music_for_the_game {
+
+    width: 1.5666666666666664vw;
+    height: 1.5666666666666664vw;
+    background-size: 100%;
+    background-image: url("../images/Sound_Not_yellow.svg");
+    position: absolute;
+    top: 0.5vw;
+    left: 56.55vw;
+    cursor: pointer;
+
+}
+
+.no_music_for_the_game {
+
+    width: 1.5666666666666664vw;
+    height: 1.5666666666666664vw;
+    background-size: 105%;
+    background-image: url("../images/No_Sound_no_yellow.svg");
+    position: absolute;
+    top: 0.5vw;
+    left: 56.55vw;
+    cursor: pointer;
+
+}
+
+#restart_button{
+
+    width: 1.5666666666666664vw;
+    height: 1.5666666666666664vw;
+    background-size: 100%;
+    background-image: url("../images/Restart_button_Not_Yellow.svg");
+    position: absolute;
+    top: 0.3vw;
+    left: 54.9vw;
+    cursor: pointer;
+
+}
+
+#Settings_for_the_game{
+
+    width: 1.5666666666666664vw;
+    height: 1.5666666666666664vw;
+    background-size: 100%;
+    background-image: url("../images/Settings_Not_Yellow.svg");
+    position: absolute;
+    top: 0.5vw;
+    left: 58.3vw;
+    cursor: pointer;
+} 
+
+
+#health_board {
+    width:13.441976666666665vw;
+    height: 3.4368733333333333vw;
+    background-image: url("../images/Lifes_Only_Out_side_lines.svg");
+    background-size: 100%;
+    position: absolute;
+    top: 0.2vw;
+    left: 26.7vw;
+    
+}
+
+/* #current_lives {
+    width:  1.9843499999999998vw;
+    height: 1.7524666666666664vw;
+    background-size: 100%;
+    position: absolute;
+    top: 0vw;
+    left: 0vw;
+
+
+} */
+
+.three_lives {
+    width:  10.117573333333336vw;
+    height: 2.7544033333333335vw;
+    background-image: url("../images/Hearts_Full.svg");
+    background-size: 110%;
+    position: absolute;
+    top: 0.3vw;
+    left: 1.37vw;
+    
+
+}
+
+.two_lives {
+    width: 6.060523333333333vw;
+    height: 2.0544033333333335vw;
+    background-image: url("../images/Hearths_Only_two.svg");
+    background-size: 120%;
+    position: absolute;
+    top: 0.6vw;
+    left: 2.0vw;
+    
+}
+
+.one_life {
+    width: 1.9843499999999998vw;
+    height: 2.13157333333333vw;
+    background-image: url("../images/Heart_Full.svg");
+    background-size: 127%;
+    position: absolute;
+    top: 0.75vw;
+    left: 2.15vw;
+    
+
+}
+
+
+aside {
+    font-family: 'Montserrat', sans-serif;
+    color:#FCD7A2;
+    font-size: 1.3vw;
+    position: relative;
+    left: -1vw;
+    top:4vw;
+    grid-area: info;
+}
+
+/* h3 {
+    font-family: 'Montserrat', sans-serif;
+    color:#FCD7A2;
+    font-size: 1vw;
+    position: relative;
+    left: -1vw;
+    top:13vw;
+    grid-area: info; 
+}
+
+h4 {
+    font-family: 'Montserrat', sans-serif;
+    color:#FCD7A2;
+    font-size: 1vw;
+    position: relative;
+    left: -1vw;
+    top:18vw;
+    grid-area: info; 
+} */
+
+li {
+    font-family: "Roller Alika";
+    color:white;
+    font-size: 2vw;
+    font-weight: 600;
+    list-style: none;
+    display: grid;
+}
+
+#gamelink {
+    font-family: "Roller Alika";
+    color:#4D89AE;
+    text-decoration:none;
+     position: relative;
+    left: 14vw;
+    top: 2.5vw;
+}
+
+#assetlink {
+    color:#4D89AE;
+    text-decoration:none;
+    left: 1.7vw;
+}
+
+/* footer {
+    height: 60px;
+    width: 100vw;
+    background-color: darkgray;
+    position: absolute;
+    bottom: 0;
+}
+
+ul {
+    width: 75vw;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+}
+
+li {
+    margin-right: 25px;
+} */
+
+#title_screen,
+#instructions,
+#game_over,
+#level_complete {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* here starts the title screen*/
+
+#title_screen {
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/title_screen.svg");
+    background-size: 100%;
+}
+
+#play_button {
+    width: 7.489076666666667vw;
+    height: 2.9415866666666663vw;
+    background-image: url("../images/play_button.svg");
+    background-size: 100%;
+}
+
+#how_to_play {
+    width: 14.312693333333334vw;
+    height: 2.9415866666666663vw;
+    background-image: url("../images/how_to_play_button.svg");
+    background-size: 100%;
+
+}
+
+.sound_button {
+    width: 1.5666666666666664vw;
+    height: 1.5666666666666664vw;
+    background-size: 100%;
+    background-image: url("../images/Sound_with_correct_measurments.svg");
+}
+
+.no_sound_button {
+    width: 1.8245966666666664vw;
+    height: 1.8245966666666664vw;
+    background-size: 100%;
+    background-image: url("../images/No_Sound_with_correct_measurements.svg");
+}
+
+#settings_button {
+    width: 1.62731vw;
+    height: 1.62731vw;
+    background-image: url("../images/settings_button.svg");
+    background-size: 100%;
+}
+
+#play_button {
+    position: absolute;
+    top: 26vw;
+    left: 21.25vw;
+    cursor: pointer;
+}
+
+#how_to_play {
+    position: absolute;
+    top: 26vw;
+    left: 29.45vw;
+    cursor: pointer;
+}
+
+.sound_button {
+    position: absolute;
+    top: 29.7vw;
+    left: 39.8vw;
+    cursor: pointer;
+}
+
+.no_sound_button {
+    position: absolute;
+    top: 29.55vw;
+    left: 39.8vw;
+    cursor: pointer;
+}
+
+#settings_button {
+    position: absolute;
+    top: 29.6vw;
+    left: 42.1vw;
+    cursor: pointer;
+}
+
+
+/* here ends the title screen*/
+
+/* here starts the instrctions screen*/
+
+#instructions {
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/Instrctions_only_background.svg");
+    background-size: 100%;
+}
+
+.sound_button2 {
+    width: 1.5666666666666664vw;
+    height: 1.5666666666666664vw;
+    background-size: 100%;
+    background-image: url("../images/Sound_with_correct_measurments.svg");
+}
+
+.no_sound_button2 {
+    width: 1.8245966666666664vw;
+    height: 1.8245966666666664vw;
+    background-size: 100%;
+    background-image: url("../images/No_Sound_with_correct_measurements.svg");
+}
+
+
+
+#settings_button2 {
+    width: 1.62731vw;
+    height: 1.62731vw;
+    background-image: url("../images/settings_button.svg");
+    background-size: 100%;
+}
+
+#play_button2 {
+    width: 7.489076666666667vw;
+    height: 2.9415866666666663vw;
+    background-image: url("../images/play_button.svg");
+    background-size: 100%;
+}
+
+.sound_button2 {
+    position: absolute;
+    top: 29.7vw;
+    left: 39.8vw;
+    cursor: pointer;
+}
+
+.no_sound_button2 {
+    position: absolute;
+    top: 29.55vw;
+    left: 39.8vw;
+    cursor: pointer;
+}
+
+#settings_button2 {
+    position: absolute;
+    top: 29.6vw;
+    left: 42.1vw;
+    cursor: pointer;
+}
+
+#play_button2 {
+    position: absolute;
+    top: 26vw;
+    left: 21.25vw;
+    cursor: pointer;
+}
+
+/* here ends the instrctions screen*/
+
+/* here starts the game over screen*/
+
+#game_over {
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/Game_Over_screen_simple.svg");
+    background-size: 100%;
+}
+
+#try_again {
+    width: 6.601789999999999vw;
+    height: 1.4914299999999998vw;
+    background-image: url("../images/Try_again_button.svg");
+    background-size: 100%;
+
+}
+
+#settings_button3 {
+    width: 1.62731vw;
+    height: 1.62731vw;
+    background-image: url("../images/settings_button.svg");
+    background-size: 100%;
+}
+
+.sound_button3 {
+    width: 1.5666666666666664vw;
+    height: 1.5666666666666664vw;
+    background-size: 100%;
+    background-image: url("../images/Sound_with_correct_measurments.svg");
+}
+
+.no_sound_button3 {
+    width: 1.5666666666666664vw;
+    height: 1.5666666666666664vw;
+    background-size: 105%;
+    background-image: url("../images/No_Sound_with_correct_measurements.svg");
+}
+
+#character_sad {
+    width: 100%;
+    height: 100%;
+    background-size: 38%;
+    background-image: url("../images/Character_Upset.svg");
+    position: absolute;
+    top: 10vw;
+    left: 39.7vw;
+}
+
+.sound_button3 {
+    position: absolute;
+    top: 0.7vw;
+    left: 0.8vw;
+    cursor: pointer;
+}
+
+
+.no_sound_button3 {
+    position: absolute;
+    top: 0.7vw;
+    left: 0.7vw;
+    cursor: pointer;
+}
+
+#settings_button3 {
+    position: absolute;
+    top: 0.6vw;
+    left: 3.3vw;
+    cursor: pointer;
+}
+
+
+#try_again {
+    position: absolute;
+    top: 19vw;
+    left: 14.6vw;
+    cursor: pointer;
+}
+
+/* here ends the game over screen */
+
+
+/* here starts the level complete screen*/
+
+
+#level_complete {
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/Congratulation_screen_simple.svg");
+    background-size: 100%;
+
+}
+
+#settings_button4 {
+    width: 1.62731vw;
+    height: 1.62731vw;
+    background-image: url("../images/settings_button.svg");
+    background-size: 100%;
+
+}
+
+.sound_button4 {
+    width: 1.5666666666666664vw;
+    height: 1.5666666666666664vw;
+    background-size: 100%;
+    background-image: url("../images/Sound_with_correct_measurments.svg");
+
+}
+
+.no_sound_button4 {
+    width: 1.5666666666666664vw;
+    height: 1.5666666666666664vw;
+    background-size: 105%;
+    background-image: url("../images/No_Sound_with_correct_measurements.svg");
+
+}
+
+
+#character_happy {
+    width: 100%;
+    height: 100%;
+    background-size: 38%;
+    background-image: url("../images/Character_Happy.svg");
+    position: absolute;
+    top: 10vw;
+    left: 39.7vw;
+
+}
+
+#play_button3 {
+    width: 7.489076666666667vw;
+    height: 2.9415866666666663vw;
+    background-image: url("../images/play_button.svg");
+    background-size: 100%;
+}
+
+
+.sound_button4 {
+    position: absolute;
+    top: 0.7vw;
+    left: 0.7vw;
+    cursor: pointer;
+}
+
+.no_sound_button4 {
+    position: absolute;
+    top: 0.7vw;
+    left: 0.8vw;
+    cursor: pointer;
+}
+
+#settings_button4 {
+    position: absolute;
+    top: 0.6vw;
+    left: 3.3vw;
+    cursor: pointer;
+}
+
+#play_button3 {
+    position: absolute;
+    top: 29vw;
+    left: 5.5vw;
+    cursor: pointer;
+
+}
+
+
+/* here ends the game over screen */
+
+.hidden {
+    visibility: hidden;
+}
+
+
+#a_container1 {
+    position: absolute;
+    /* border: 1px red solid; */
+}
+
+#a_container2 {
+    position: absolute;
+    /* border: 1px red solid; */
+}
+
+#a_container3 {
+    position: absolute;
+    /* border: 1px red solid; */
+}
+
+#a_container4 {
+    position: absolute;
+    /* border: 1px red solid; */
+}
+
+#a_container5 {
+    position: absolute;
+    /* border: 1px red solid; */
+}
+
+#g_container1 {
+    position: absolute;
+    /* border: 1px red solid; */
+}
+
+#g_container2 {
+    position: absolute;
+    /* border: 1px red solid; */
+}
+
+#g_container3 {
+    position: absolute;
+    /* border: 1px red solid; */
+}
+
+#g_container4 {
+    position: absolute;
+    /* border: 1px red solid; */
+}
+
+#g_container5 {
+    position: absolute;
+    /* border: 1px red solid; */
+}
+
+#g_container6 {
+    position: absolute;
+    /* border: 1px red solid; */
+}
+
+#g_container7 {
+    position: absolute;
+    /* border: 1px red solid; */
+}
+
+.position1 {
+    top: -8vw;
+    left: 10vw;
+}
+
+.position2 {
+    top: -8vw;
+    left: 30vw;
+}
+
+.position3 {
+    top: -8vw;
+    left: 40vw;
+}
+
+.position4 {
+    top: -8vw;
+    left: 40vw;
+}
+
+
+.position5 {
+    top: -8vw;
+    left: 50vw;
+}
+
+
+.position6 {
+    top: -8vw;
+    left: 24vw;
+}
+
+.position7 {
+    top: -8vw;
+    left: 34vw;
+}
+
+
+.position8 {
+    top: -8vw;
+    left: 28vw;
+}
+
+
+.position9 {
+    top: -8vw;
+    left: 38vw;
+}
+
+
+.position10 {
+    top: -8vw;
+    left: 42vw;
+}
+
+
+.position11 {
+    top: -8vw;
+    left: 45vw;
+}
+
+.position12 {
+    top: -8vw;
+    left: 5vw;
+}
+
+.position13 {
+    top: -8vw;
+    left: 15vw;
+}
+
+#a_chicken1 {
+    /* width:100%;
+    height:100%; */
+    width: 9.99496vw;
+    height:  6.6771vw;
+    background-image: url("../images/Alien_chicken_1.svg");
+    background-size: 100%;
+}
+
+#a_chicken2 {
+    width: 6.2081015625vw;
+    height: 9.728640625vw;
+    background-image: url("../images/Alien_chicken_2.svg");
+    background-size: 100%;
+}
+
+#a_chicken3 {
+    width: 8.0813125vw;
+    height: 8.171390625vw;
+    background-image: url("../images/Alien_Chicken_3.svg");
+    background-size: 100%;
+}
+
+#a_chicken4 {
+    width: 7.55146875vw;
+    height: 10.287015624999999vw;
+    background-image: url("../images/Alien_Chicken_4.svg");
+    background-size: 100%;
+}
+
+#a_chicken5 {
+    width: 7.200750000000001vw;
+    height: 9.1441484375vw;
+    background-image: url("../images/Alien_Chicken_5.svg");
+    background-size: 100%;
+}
+
+#g_chicken1 {
+    width: 5.784406250000001vw;
+    height: 7.9624609375vw;
+    background-image: url("../images/Chicken_1.svg");
+    background-size: 100%;
+}
+
+#g_chicken2 {
+    width: 7.3896484375vw;
+    height: 9.502312499999999vw;
+    background-image: url("../images/Chicken_2.svg");
+    background-size: 100%;
+}
+
+#g_chicken3 {
+    width: 8.1405390625vw;
+    height: 7.79453125vw;
+    background-image: url("../images/Chicken_3.svg");
+    background-size: 100%;
+}
+
+#g_chicken4 {
+    width: 6.635257812499999vw;
+    height: 7.2502109375vw;
+    background-image: url("../images/Chicken_4.svg");
+    background-size: 100%;
+}
+
+#g_chicken5 {
+    width: 5.949218750000001vw;
+    height: 7.53515625vw;
+    background-image: url("../images/Chicken_5.svg");
+    background-size: 100%;
+}
+
+
+#g_chicken6 {
+    width: 4.67246875vw;
+    height: 7.38984375vw;
+    background-image: url("../images/Chicken_6.svg");
+    background-size: 100%;
+}
+
+#g_chicken7 {
+    width: 4.353265625000001vw;
+    height: 8.4211875vw;
+    background-image: url("../images/Chicken_7.svg");
+    background-size: 100%;
+}
+
+.moveDown1 {
+    animation: moveDown 10s .5s linear infinite;
+}
+
+@keyframes moveDown {
+    to {
+        transform: translateY(120vw);
+    }
+}
+
+.moveDown2 {
+    animation: moveDown 10s .5s cubic-bezier(.11, .68, .83, .67) infinite;
+}
+
+@keyframes moveDown {
+    to {
+        transform: translateY(120vw);
+    }
+}
+
+
+.moveDown3 {
+    animation: moveDown 8s steps(45) infinite;
+}
+
+@keyframes moveDown {
+    to {
+        transform: translateY(120vw);
+    }
+}
+
+.moveDown4 {
+    animation: moveDown 12s ease-in infinite;
+}
+
+@keyframes moveDown {
+    to {
+        transform: translateY(120vw);
+    }
+}
+
+.moveDown5 {
+    animation: moveDown 8s ease-out infinite;
+}
+
+@keyframes moveDown {
+    to {
+        transform: translateY(120vw);
+    }
+}
+
+.moveDown6 {
+    animation: moveDown 8s ease-in-out infinite;
+}
+
+@keyframes moveDown {
+    to {
+        transform: translateY(120vw);
+    }
+}
+
+.moveDown7 {
+    animation: moveDown 4s linear infinite;
+}
+
+@keyframes moveDown {
+    to {
+        transform: translateY(120vw);
+    }
+}
+
+.moveDown8 {
+    animation: moveDown 13s ease-in-out infinite;
+}
+
+@keyframes moveDown {
+    to {
+        transform: translateY(120vw);
+    }
+}
+
+
+.moveDown9 {
+    animation: moveDown 17s ease-in-out infinite;
+}
+
+@keyframes moveDown {
+    to {
+        transform: translateY(120vw);
+    }
+}
+
+
+.moveDown10 {
+    animation: moveDown 10s ease-in-out infinite;
+}
+
+@keyframes moveDown {
+    to {
+        transform: translateY(120vw);
+    }
+}
+
+.moveDown11 {
+    animation: moveDown 5s ease-in infinite;
+}
+
+@keyframes moveDown {
+    to {
+        transform: translateY(120vw);
+    }
+}
+
+.moveDown12 {
+    animation: moveDown 8s ease-out infinite;
+}
+
+@keyframes moveDown {
+    to {
+        transform: translateY(120vw);
+    }
+}
+
+.moveDown13 {
+    animation: moveDown 16s linear infinite;
+}
+
+@keyframes moveDown {
+    to {
+        transform: translateY(120vw);
+    }
+}
+
+.rotate {
+    animation: rotate 1.5s linear;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(720deg);
+    }
+}
+
+.paused {
+    animation-play-state: paused;
+}
+
+.scaleDown:hover {
+    transform: scale(0, 0) rotate(3600deg);
+    transition: transform 7s linear;
+}
+
+/* .skew:hover {
+    transform: skewX(50deg);
+    transform-origin: bottom left;
+    transition: transform 3s ease-in;
+} */
+
+
+#globalNav {
+    font-family: 'Poppins', sans-serif;
+}
+
+#someNav {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#someNav ul {
+    flex-flow: column;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+
+/* @media only screen and (max-width: 300px) {
+
+
+    #screen {
+        top:10vw;
+        left: -7.5vw;
+        position: relative;
+        margin-left: 25px;
+        grid-area: game;
+        width: 64vw;
+        height: 36vw;
+        border: 4px #1D5E82 solid;
+        overflow: hidden;
+    }
+    
+
+    aside {
+        font-family: 'Montserrat', sans-serif;
+        color:#FCD7A2;
+        font-size: 1.3vw;
+        position: relative;
+        left: -1vw;
+        right: 5vw; ;
+        top:10vw;
+        grid-area: info;
+    }
+ 
+    main {
+        width: 100%;
+        height: 60vw;
+        display: grid;
+        grid-template-areas: "game info";
+        grid-gap: 5vw;
+        grid-template-columns: 65% 1fr;
+        background-color: #4D89AE;
+    }
+
+
+    li {
+        font-family: "Roller Alika";
+        color:white;
+        font-size: 2vw;
+        font-weight: 600;
+        list-style: none;
+        display: grid;
+    }
+
+
+    #gamelink {
+        font-family: "Roller Alika";
+        color:#4D89AE;
+        text-decoration:none;
+         position: relative;
+        left: 14vw;
+        top: 2.5vw;
+    }
+    
+    #assetlink {
+        color:#4D89AE;
+        text-decoration:none;
+        left: 0.7vw;
+    }
+
+    #current_points{
+        font-family: 'Roller Alika';
+        font-size: 0.25rem; 
+        color: white;
+        position: absolute;
+        top: 0.55vw;
+        left: 7.9vw;
+    } 
+     
+
+    #loading_box {
+        width:40.69921875vw;
+        height:40.69921875vw;
+        background-size: 100%;
+        background-image: url("/images/Position15.svg");
+        Z-index: 3 ;
+        position: absolute;
+        top: 10vw;
+        left:33vw;
+        animation: 6s spin ease-in;
+        cursor: pointer;
+    }
+    
+    #background {
+        width: 120vw;
+        height: 87vw;
+        position: absolute;
+        top:0;
+        left:0;
+        Z-index: 2 ;
+        background-color: #4D89AE;
+    
+    }
+}  */
